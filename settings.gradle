@@ -1,0 +1,2 @@
+rootProject.name = "GadgetbridgeMailSync"
+include ':app'

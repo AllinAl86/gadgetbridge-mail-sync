@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小米手环 6 ➔ 电脑 Agent 自动同步"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1976D2"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="目标接收邮箱:"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etToEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3994199150@qq.com"
+            android:enabled="false"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发件邮箱 (你的 QQ/163 邮箱):"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etFromEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="例如: your_name@qq.com"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发件邮箱授权码 (SMTP Password):"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="QQ邮箱开启POP3/SMTP生成的16位授权码"
+            android:inputType="textPassword"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存配置"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnTriggerSync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="【立即同步手环并发送邮件】"
+            android:backgroundTint="#388E3C"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="状态: 就绪。已监听 Gadgetbridge 导出广播。"
+            android:textSize="14sp"
+            android:textColor="#555555" />
+
+    </LinearLayout>
+</ScrollView>
