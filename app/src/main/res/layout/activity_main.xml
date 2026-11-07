@@ -12,77 +12,125 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="小米手环 6 ➔ 电脑 Agent 自动同步"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:text="小米手环 → 电脑邮箱"
             android:textColor="#1976D2"
-            android:layout_marginBottom="16dp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="先在 Gadgetbridge 里做完这三步，再回到这里：\n1. 设置 → 开发者选项 → Intent API，打开「活动同步」和「数据库导出」\n2. 设置 → 自动化 → 数据库导出，选一个普通目录里的文件，例如「文档/手环导出/Gadgetbridge.sqlite」\n3. 在 Gadgetbridge 里先手动导出成功一次\n手环需要已经连在 Gadgetbridge 上。"
+            android:textColor="#555555"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="目标接收邮箱:"
+            android:text="接收邮箱"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etToEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3994199150@qq.com"
+            android:layout_marginBottom="12dp"
             android:enabled="false"
-            android:layout_marginBottom="12dp" />
+            android:text="3994199150@qq.com" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发件邮箱 (你的 QQ/163 邮箱):"
+            android:text="发件邮箱"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFromEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="例如: your_name@qq.com"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"
+            android:hint="QQ、Foxmail、163 或 126"
+            android:inputType="textEmailAddress" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发件邮箱授权码 (SMTP Password):"
+            android:text="邮箱授权码"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="QQ邮箱开启POP3/SMTP生成的16位授权码"
-            android:inputType="textPassword"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="12dp"
+            android:hint="邮箱设置里生成的授权码，不是登录密码"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="保存配置"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="16dp"
+            android:text="保存邮箱" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gadgetbridge 导出的数据库"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="尚未选择"
+            android:textColor="#333333" />
+
+        <Button
+            android:id="@+id/btnPickFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择数据库文件" />
+
+        <Button
+            android:id="@+id/btnPickFolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="或选择导出文件夹" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="每天自动同步并发送" />
+
+        <Button
+            android:id="@+id/btnPickTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="自动发送时间 07:30" />
 
         <Button
             android:id="@+id/btnTriggerSync"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="【立即同步手环并发送邮件】"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="#388E3C"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="20dp" />
+            android:text="立即同步手环并发送邮件"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="状态: 就绪。已监听 Gadgetbridge 导出广播。"
-            android:textSize="14sp"
-            android:textColor="#555555" />
+            android:text="就绪"
+            android:textColor="#555555"
+            android:textSize="14sp" />
 
     </LinearLayout>
 </ScrollView>
