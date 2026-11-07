@@ -19,17 +19,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Cache Gradle Packages
-        uses: actions/cache@v3
+      - name: Setup Gradle 8.5
+        uses: gradle/actions/setup-gradle@v3
         with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+          gradle-version: "8.5"
 
       - name: Build Debug APK
         run: |
-          chmod +x gradlew || true
           gradle assembleDebug --stacktrace
 
       - name: Upload APK Artifact
